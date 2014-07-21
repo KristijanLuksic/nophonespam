@@ -1,4 +1,4 @@
 nophonespam
 ===========
 
-Ignore annoying spam phone calls.
+Ignore any annoying spam phone calls.

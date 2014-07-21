@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Phone Call Blocker</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="contacts">Contacts</string>
+    <string name="block_list">Block List</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_activity_base_">Base_Activity</string>
+    <string name="action_search">Search</string>
+    <string name="title_activity_call_lister">CallLister</string>
+    <string name="create_new">Create New</string>
+    <string name="open">Open</string>
+    <string name="exit">Exit</string>
+
+</resources>

@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 
 public class MyActivity extends Activity {
-    private final String TAG = "My Activity";
+
     public final static String EXTRA_MESSAGE = "com.luksic.kristijan.newapplication";
 
     @Override

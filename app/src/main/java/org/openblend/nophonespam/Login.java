@@ -1,9 +1,12 @@
 package org.openblend.nophonespam;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Login extends Activity {
 
@@ -12,6 +15,9 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
+
+
+
 
 
     @Override
@@ -32,4 +38,40 @@ public class Login extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
+
+    public void setupLoginButton(View view) {
+        Button loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Login.this, MyActivity.class);
+
+                startActivity(new Intent(Login.this, MyActivity.class));
+            }
+        });
+
+
+
+    }
+
+    public void setupRegisterButton(View view) {
+        Button loginButton = (Button) findViewById(R.id.registerButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Login.this, MyActivity.class);
+
+                startActivity(new Intent(Login.this, MyActivity.class));
+            }
+        });
+
+
+
+    }
+
+    }
+

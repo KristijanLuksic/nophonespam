@@ -33,17 +33,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_button"
-        android:id="@+id/button"
-        android:layout_below="@+id/password"
+        android:id="@+id/loginButton"
+        android:layout_above="@+id/registerButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp" />
+        android:onClick="setupLoginButton"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_button"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/registerButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:onClick="setupRegisterButton"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/picture"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/Email" />
 
 </RelativeLayout>

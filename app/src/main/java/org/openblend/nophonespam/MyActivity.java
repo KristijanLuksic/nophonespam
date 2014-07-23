@@ -38,7 +38,17 @@ public class MyActivity extends Activity {
         intent.putExtra(EXTRA_MESSAGE, message);
 
         startActivity(intent);
+
+
+
+
+
+
     }
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

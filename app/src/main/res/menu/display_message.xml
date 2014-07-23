@@ -1,10 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.kristijan.maja.myapplication.DisplayMessageActivity" >
+    tools:context=".DisplayMessageActivity">
+
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never">
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_settings">
+
 
         <!-- "file" submenu -->
         <menu>
@@ -12,31 +16,36 @@
                 android:title="@string/create_new" />
             <item android:id="@+id/open"
                 android:title="@string/open" />
+            <item android:id="@+id/refresh"
+                android:title="@string/refresh"/>
+
+
+
 
         </menu>
     </item>
 
-
     <item android:id="@+id/contacts"
         android:title="@string/contacts"
         android:orderInCategory="1"
-        android:showAsAction="always" />
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_person"/>
 
     <item android:id="@+id/block_list"
         android:title="@string/block_list"
         android:orderInCategory="2"
-        android:showAsAction="always"/>
-
-
-    <item android:id="@+id/refresh"
-        android:title="@string/refresh"
-        android:orderInCategory="3"
         android:showAsAction="always"
-        android:uiOptions="splitActionBarWhenNarrow"/>
+        android:icon="@drawable/ic_action_discard"/>
 
     <item android:id="@+id/exit"
         android:title="@string/exit"
-        android:orderInCategory="4"
+        android:orderInCategory="101"
         android:showAsAction="never"
         android:uiOptions="splitActionBarWhenNarrow"/>
+
 </menu>
+
+
+
+
+

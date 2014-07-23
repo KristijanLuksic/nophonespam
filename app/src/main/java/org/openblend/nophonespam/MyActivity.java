@@ -27,7 +27,7 @@ public class MyActivity extends Activity {
         return true;
     }
 
-       public void sendMessage (View view) {
+    public void sendMessage (View view) {
 
         Intent intent = new Intent(this, DisplayMessageActivity.class);
 
@@ -48,11 +48,21 @@ public class MyActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
-        }else if (id==R.id.exit) {
+        } else if (id == R.id.exit) {
+
 
             finish();
+            System.exit(0);
             return true;
+
+        }
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                recreate();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

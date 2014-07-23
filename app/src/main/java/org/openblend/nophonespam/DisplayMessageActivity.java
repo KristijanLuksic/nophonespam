@@ -24,7 +24,6 @@ public class DisplayMessageActivity extends Activity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -42,11 +41,21 @@ public class DisplayMessageActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
-        }else if (id==R.id.exit) {
+        } else if (id == R.id.exit) {
 
             finish();
+            System.exit(0);
             return true;
+
+
         }
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                recreate();
+                return true;
+        }
+            return super.onOptionsItemSelected(item);
+        }
     }
-}
+
+

@@ -12,9 +12,9 @@
 
     </style>
 
+    <style name="listViewActivatedStyle">listViewActivatedStyle</style>
 
-
-
+    <style name="quickContactBadgeStyle">quickContactBadgeStyle</style>
 
 
 </resources>

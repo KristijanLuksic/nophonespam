@@ -1,35 +1,26 @@
 package org.openblend.nophonespam;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-public class DisplayMessageActivity extends MyActivity {
+public class Contacts extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contacts);
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
 
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
-
-        setContentView(textView);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.contacts, menu);
         return true;
-
-
     }
 
     @Override
@@ -42,10 +33,10 @@ public class DisplayMessageActivity extends MyActivity {
             return true;
         } else if (id == R.id.exit) {
 
+
             finish();
             System.exit(0);
             return true;
-
 
         }
         switch (item.getItemId()) {
@@ -53,8 +44,25 @@ public class DisplayMessageActivity extends MyActivity {
                 recreate();
                 return true;
         }
-            return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
     }
 
+
+    public boolean toContacts(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.contacts:
+                startActivity(new Intent(Contacts.this, Contacts.class));
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+    public boolean toBlockList(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.block_list:
+                startActivity(new Intent(Contacts.this, BlockList.class));
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+}
 

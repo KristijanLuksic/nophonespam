@@ -33,24 +33,20 @@ public class CallReciever extends BroadcastReceiver {
                     callState = "IDLE";
                     break;
                 case TelephonyManager.CALL_STATE_RINGING:
-                    // -- check international call or not.
-                    if (incomingNumber.startsWith("00")) {
-                        Toast.makeText(mContext, "International Call- " + incomingNumber, Toast.LENGTH_LONG).show();
-                        callState = "International - Ringing (" + incomingNumber+ ")";
-                    } else {
-                        Toast.makeText(mContext, "Local Call - " + incomingNumber, Toast.LENGTH_LONG).show();
-                        callState = "Local - Ringing (" + incomingNumber + ")";
-                    }
-                    break;
+
+                 {
+                        Toast.makeText(mContext, "Incoming Call- " + incomingNumber, Toast.LENGTH_LONG).show();
+                        callState = "Incoming - Ringing (" + incomingNumber+ ")";
+
+                    break;}
+
                 case TelephonyManager.CALL_STATE_OFFHOOK:
                     String dialingNumber = mIntent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-                    if (dialingNumber.startsWith("00")) {
-                        Toast.makeText(mContext,"International - " + dialingNumber,Toast.LENGTH_LONG).show();
-                        callState = "International - Dialing (" + dialingNumber+ ")";
-                    } else {
-                        Toast.makeText(mContext, "Local Call - " + dialingNumber,Toast.LENGTH_LONG).show();
-                        callState = "Local - Dialing (" + dialingNumber + ")";
-                    }
+
+                        Toast.makeText(mContext, "Incoming Call - " + dialingNumber,Toast.LENGTH_LONG).show();
+                        callState = "Incoming - Dialing (" + dialingNumber + ")";
+
+
                     break;
             }
             Log.i(">>>Broadcast", "onCallStateChanged " + callState);

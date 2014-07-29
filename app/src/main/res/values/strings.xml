@@ -29,5 +29,6 @@
     <string name="phone_name">Phone</string>
     <string name="address">Address</string>
     <string name="contact_image">contact image</string>
+    <string name="title_activity_incoming_call">IncomingCallActivity</string>
 
 </resources>

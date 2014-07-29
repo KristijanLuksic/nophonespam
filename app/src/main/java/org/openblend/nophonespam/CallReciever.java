@@ -32,10 +32,9 @@ public class CallReciever extends BroadcastReceiver {
                 case TelephonyManager.CALL_STATE_IDLE:
                     callState = "IDLE";
                     break;
-                case TelephonyManager.CALL_STATE_RINGING:
+                case TelephonyManager.CALL_STATE_RINGING:{
 
-                 {
-                        Toast.makeText(mContext, "Incoming Call- " + incomingNumber, Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, "Incoming Call- " + incomingNumber, Toast.LENGTH_LONG).show();
                         callState = "Incoming - Ringing (" + incomingNumber+ ")";
 
                     break;}

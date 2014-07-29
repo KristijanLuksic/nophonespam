@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 public class BlockList extends Activity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +62,6 @@ public class BlockList extends Activity {
                 startActivity(new Intent(BlockList.this, BlockList.class));
         }
         return super.onOptionsItemSelected(item);
-
-
 
     }
 }

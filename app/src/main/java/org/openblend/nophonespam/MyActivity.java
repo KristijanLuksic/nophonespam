@@ -11,11 +11,14 @@ public class MyActivity extends Activity {
 
     public final static String EXTRA_MESSAGE = "com.luksic.kristijan.newapplication";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-    }
+ }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -23,12 +26,6 @@ public class MyActivity extends Activity {
         getMenuInflater().inflate(R.menu.my, menu);
         return true;
     }
-
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -29,7 +29,7 @@
             android:value="org.openblend.nophonespam.MyActivity" />
 
         <activity
-            android:name=".Contacts"
+            android:name=".Contact"
             android:label="Contacts"
             android:parentActivityName=".MyActivity" >
             <meta-data
@@ -42,7 +42,7 @@
         </activity>
 
         <receiver
-            android:name=".CallReciever"
+            android:name=".CallReceiver"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />

@@ -51,7 +51,7 @@ public class BlockList extends Activity {
     public boolean toContacts(MenuItem item) {
         switch (item.getItemId()){
             case R.id.contacts:
-                startActivity(new Intent(BlockList.this, Contacts.class));
+                startActivity(new Intent(BlockList.this, Contact.class));
         }
         return super.onOptionsItemSelected(item);
 

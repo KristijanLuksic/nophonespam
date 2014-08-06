@@ -3,19 +3,52 @@ package org.openblend.nophonespam;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.List;
 
 
 public class MyActivity extends Activity {
 
+
+
     public final static String EXTRA_MESSAGE = "com.luksic.kristijan.newapplication";
+
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        DatabaseHandler db = new DatabaseHandler(this);
+
+        /**
+         * CRUD Operations
+         * */
+        // Inserting Contacts
+        Log.d("Insert: ", "Inserting ..");
+        db.addContact(new Contact("James", "9100000000"));
+        db.addContact(new Contact("Jack", "9199999999"));
+        db.addContact(new Contact("Tommy", "9522222222"));
+        db.addContact(new Contact("George", "9533333333"));
+
+        // Reading all contacts
+        Log.d("Reading: ", "Reading all contacts..");
+        List<Contact> contacts = db.getAllContacts();
+
+        for (Contact cn : contacts) {
+            String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Phone: " + cn.getPhoneNumber();
+            // Writing Contacts to log
+            Log.d("Name: ", log);
+
+        }
+
  }
 
 
@@ -55,7 +88,7 @@ public class MyActivity extends Activity {
     public boolean toContacts(MenuItem item) {
         switch (item.getItemId()){
             case R.id.contacts:
-                startActivity(new Intent(MyActivity.this, Contacts.class));
+                startActivity(new Intent(MyActivity.this, Contact.class));
         }
         return super.onOptionsItemSelected(item);
 
@@ -70,6 +103,8 @@ public class MyActivity extends Activity {
 
 
     }
+
+
 }
 
 

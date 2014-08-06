@@ -30,5 +30,14 @@
     <string name="address">Address</string>
     <string name="contact_image">contact image</string>
     <string name="title_activity_incoming_call">IncomingCallActivity</string>
+    <string name="save_data">savedata</string>
+    <string name="home_address">homeaddress</string>
+    <string name="add_contact">addcontact</string>
+    <string name="first_name">firstname</string>
+    <string name="phone_number">phonenumber</string>
+    <string name="last_name">lastname</string>
+    <string name="edit_contact_title">editcontacttitle</string>
+    <string name="edit_button">editbutton</string>
+    <string name="delete_button">deletebutton</string>
 
 </resources>

@@ -1,60 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
 
-    <TextView
-        android:layout_width="200dp"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Info"
-        android:id="@+id/textView4" />
+        android:text="View List"
+        android:id="@+id/btnviewlist"
+        android:layout_marginBottom="129dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
 
-    <EditText
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/name"
-       />
+        android:text="Add"
+        android:id="@+id/btnadd"
+        android:layout_alignBottom="@+id/btnviewlist"
+        android:layout_toLeftOf="@+id/btnviewlist"
+        android:layout_toStartOf="@+id/btnviewlist"
+        android:layout_alignLeft="@+id/phonenumtext"
+        android:layout_alignStart="@+id/phonenumtext"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/btnclear"
+        android:layout_alignBottom="@+id/btnviewlist"
+        android:layout_toRightOf="@+id/btnviewlist"
+        android:layout_toEndOf="@+id/btnviewlist"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone Number"
-        android:id="@+id/textView5" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name: "
+        android:id="@+id/name"
+        android:layout_above="@+id/nametext"
+        android:layout_alignLeft="@+id/phnum"
+        android:layout_alignStart="@+id/phnum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Phone Number:"
+        android:id="@+id/phnum"
+        android:layout_toStartOf="@+id/btnclear"
+        android:layout_above="@+id/phonenumtext"
+        android:layout_alignLeft="@+id/phonenumtext"
+        android:layout_alignStart="@+id/phonenumtext" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/phonenumber"
-        android:layout_gravity="center_horizontal"
-        />
+        android:id="@+id/phonenumtext"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/nametext"
+        android:layout_above="@+id/phnum"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginBottom="32dp"
+        android:layout_alignRight="@+id/phonenumtext"
+        android:layout_alignEnd="@+id/phonenumtext" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clear"
-        android:id="@+id/button2"
-        android:layout_gravity="center_horizontal"/>
+</RelativeLayout>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View List"
-        android:id="@+id/button3"
-        android:layout_gravity="center_horizontal" />
 
-</LinearLayout>
+
+
+

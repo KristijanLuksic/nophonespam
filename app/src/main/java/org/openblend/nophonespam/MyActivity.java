@@ -1,81 +1,77 @@
 package org.openblend.nophonespam;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
-public class MyActivity extends Activity {
-
-    public final static String EXTRA_MESSAGE = "com.luksic.kristijan.newapplication";
-    DatabaseHandler db = new DatabaseHandler(this);
+public class MyActivity extends ListActivity {
 
 
-    @Override
+
+    // The Intent is used to issue that an operation should
+    // be performed
+
+    Intent intent;
+    TextView contactId;
+
+    // The object that allows me to manipulate the database
+
+    DBTools dbTools = new DBTools(this);
+
+    // Called when the Activity is first called
+
     protected void onCreate(Bundle savedInstanceState) {
+        // Get saved data if there is any
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
+        ArrayList<HashMap<String, String>> contactList =  dbTools.getAllContacts();
+
+        if(contactList.size()!=0) {
+
+            ListView listView = getListView();
+            listView.setOnItemClickListener(new OnItemClickListener() {
+
+                public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+
+                    contactId = (TextView) view.findViewById(R.id.contactId);
+                    String contactIdValue = contactId.getText().toString();
+
+                    Intent  theIndent = new Intent(getApplication(),EditContact.class);
+                    theIndent.putExtra("contactId", contactIdValue);
+
+                    // Starts Edit Contact.
+
+                    startActivity(theIndent);
+
+                }
+            });
+
+             ListAdapter adapter = new SimpleAdapter( MyActivity.this,contactList, R.layout.contact_entry, new String[] { "contactId","lastName", "firstName"}, new int[] {R.id.contactId, R.id.lastName, R.id.firstName});
+
+             setListAdapter(adapter);
+
+
         }
-
-
-
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
-        return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.exit) {
+   //Response to Button.
 
+    public void showAddContact(View view) {
+        Intent theIntent = new Intent(getApplicationContext(), NewContact.class);
+        startActivity(theIntent);
 
-            finish();
-            System.exit(0);
-            return true;
-
-        }
-        switch (item.getItemId()) {
-            case R.id.refresh:
-                recreate();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public boolean toContacts(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.contacts:
-                startActivity(new Intent(MyActivity.this, Contact.class));
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
-    public boolean toBlockList(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.block_list:
-                startActivity(new Intent(MyActivity.this, BlockList.class));
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
-
-
-
-
-

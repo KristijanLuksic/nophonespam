@@ -1,55 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.openblend.nophonespam" >
 
+    package="org.openblend.nophonespam">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+
+
         <activity
-            android:name=".MyActivity"
+            android:name="org.openblend.nophonespam.MyActivity"
             android:label="@string/app_name" >
+
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
 
+
+
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="org.openblend.nophonespam.MyActivity" />
-
         <activity
-            android:name=".Contact"
-            android:label="Contacts"
-            android:parentActivityName=".MyActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.openblend.nophonespam.MyActivity" />
+            android:name="org.openblend.nophonespam.NewContact"
+            android:label="" >
         </activity>
         <activity
-            android:name=".BlockList"
-            android:label="@string/title_activity_block_list" >
+            android:name="org.openblend.nophonespam.EditContact"
+            android:label="" >
         </activity>
-
-        <receiver
-            android:name=".CallReceiver"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE" />
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
-            </intent-filter>
-        </receiver>
 
     </application>
+
+
 
 </manifest>

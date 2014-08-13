@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
+
+
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000" >
+        android:background="#99CCFF" >
 
         <TextView
             android:id="@+id/addContactTextView"
@@ -17,10 +19,8 @@
             android:padding="@dimen/padding_5dp"
             android:text="@string/add_contact"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF" />
-
+            android:textColor="#000000" />
     </TableRow>
-
 
     <TableRow
         android:id="@+id/tableRow2"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/first_name" />
 
         <EditText
@@ -42,11 +42,10 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:padding="@dimen/padding_5dp" >
 
             <requestFocus />
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -59,8 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
-            android:text="@string/last_name" />
+            android:padding="@dimen/padding_5dp"
+            android:text="@string/message" />
 
         <EditText
             android:id="@+id/lastName"
@@ -69,10 +68,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -82,11 +79,10 @@
 
         <TextView
             android:id="@+id/phoneNumberTextView"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/phone_number" />
 
         <EditText
@@ -96,10 +92,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="phone"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -112,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/email_address" />
 
         <EditText
@@ -122,52 +116,24 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tableRow6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+     <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/addressTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
-            android:text="@string/home_address" />
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="addNewContact"
+                android:text="@string/save_data" />
+        </TableRow>
 
-        <EditText
-            android:id="@+id/homeAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="text|textPostalAddress"
-            android:paddingRight="@dimen/padding_5dp" >
-
-        </EditText>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save_data"
-            android:onClick="addNewContact"
-            android:layout_weight="1"/>
-
-    </TableRow>
 
 
 </TableLayout>

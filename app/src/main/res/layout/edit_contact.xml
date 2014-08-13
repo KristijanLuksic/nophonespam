@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000" >
+        android:background="#99CCFF" >
 
         <TextView
             android:id="@+id/editContactTitleTextView"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000000"
             android:padding="@dimen/padding_5dp"
             android:text="@string/edit_contact_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF" />
-
+            android:textColor="#000000" />
     </TableRow>
 
     <TableRow
@@ -33,21 +29,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/first_name" />
 
         <EditText
-            android:id="@+id/firstNameEditText"
+            android:id="@+id/firstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:padding="@dimen/padding_5dp" >
 
             <requestFocus />
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -60,21 +55,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
-            android:text="@string/last_name" />
+            android:padding="@dimen/padding_5dp"
+            android:text="@string/message" />
 
         <EditText
-            android:id="@+id/lastNameEditText"
-
+            android:id="@+id/lastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -84,25 +76,21 @@
 
         <TextView
             android:id="@+id/phoneNumberTextView"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/phone_number" />
 
         <EditText
-            android:id="@+id/phoneNumberEditText"
-
+            android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="phone"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
     </TableRow>
 
     <TableRow
@@ -115,48 +103,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
+            android:padding="@dimen/padding_5dp"
             android:text="@string/email_address" />
 
         <EditText
-            android:id="@+id/emailAddressEditText"
-
+            android:id="@+id/emailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:paddingRight="@dimen/padding_5dp" >
-
+            android:padding="@dimen/padding_5dp" >
         </EditText>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/addressTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="@dimen/padding_5dp"
-            android:text="@string/home_address" />
-
-        <EditText
-            android:id="@+id/homeAddressEditText"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="text|textPostalAddress"
-            android:paddingRight="@dimen/padding_5dp" >
-
-        </EditText>
-
     </TableRow>
 
     <TableRow
@@ -166,20 +124,18 @@
 
         <Button
             android:id="@+id/editButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="editContact"
-            android:text="@string/edit_button"
-            android:layout_weight="1"/>
+            android:text="@string/edit_button" />
 
         <Button
             android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="removeContact"
-            android:text="@string/delete_button"
-            android:layout_weight="1"/>
-
+            android:text="@string/delete_button" />
     </TableRow>
-
 </TableLayout>
